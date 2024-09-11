@@ -37,19 +37,19 @@ Pane {
     palette.highlight: config.AccentColor
     palette.text: config.MainColor
     palette.buttonText: config.MainColor
-    palette.window: "#444"
+    palette.window: "#ffffff"
 
     font.family: config.Font
     font.pointSize: config.FontSize !== "" ? config.FontSize : parseInt(height / 80)
     focus: true
 
     property bool leftleft: config.HaveFormBackground == "true" &&
-                            config.PartialBlur == "false" &&
+                            config.PartialBlur == "true" &&
                             config.FormPosition == "left" &&
                             config.BackgroundImageAlignment == "left"
 
     property bool leftcenter: config.HaveFormBackground == "true" &&
-                              config.PartialBlur == "false" &&
+                              config.PartialBlur == "true" &&
                               config.FormPosition == "left" &&
                               config.BackgroundImageAlignment == "center"
 
@@ -65,7 +65,6 @@ Pane {
 
     Item {
         id: sizeHelper
-
         anchors.fill: parent
         height: parent.height
         width: parent.width
@@ -74,8 +73,8 @@ Pane {
             id: formBackground
             anchors.fill: form
             anchors.centerIn: form
-            color: "#444"
-            opacity: config.PartialBlur == "true" ? 0.3 : 1
+            color: config.BackgroundColor
+            opacity: 0.8
             z: 1
         }
 
@@ -229,3 +228,7 @@ Pane {
         }
     }
 }
+
+
+
+
